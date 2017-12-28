@@ -47,6 +47,33 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CommandPattern\Commands\CeilingFan\CeilingFanOn.cs" />
+    <Compile Include="CommandPattern\Commands\CeilingFan\CeilingFanOff.cs" />
+    <Compile Include="CommandPattern\Commands\CeilingFan\CeilingFanState.cs" />
+    <Compile Include="CommandPattern\Commands\CeilingFan\CeilingGetSpeed.cs" />
+    <Compile Include="CommandPattern\Commands\CeilingFan\CeilingFanMedium.cs" />
+    <Compile Include="CommandPattern\Commands\CeilingFan\CeilingFanLow.cs" />
+    <Compile Include="CommandPattern\Commands\CeilingFan\CeilingFanHigh.cs" />
+    <Compile Include="CommandPattern\Devices\CeilingFan.cs" />
+    <Compile Include="CommandPattern\Devices\GarageDoor.cs" />
+    <Compile Include="CommandPattern\Commands\GarageDoor\GarageDoorDown.cs" />
+    <Compile Include="CommandPattern\Commands\GarageDoor\GarageDoorLightOff.cs" />
+    <Compile Include="CommandPattern\Commands\GarageDoor\GarageDoorLightOn.cs" />
+    <Compile Include="CommandPattern\Commands\GarageDoor\GarageDoorStop.cs" />
+    <Compile Include="CommandPattern\Commands\GarageDoor\GarageDoorUp.cs" />
+    <Compile Include="CommandPattern\Devices\Light.cs" />
+    <Compile Include="CommandPattern\Commands\Light\LightOff.cs" />
+    <Compile Include="CommandPattern\Commands\Light\LightOn.cs" />
+    <Compile Include="CommandPattern\Commands\NoCommand.cs" />
+    <Compile Include="CommandPattern\Devices\Stereo.cs" />
+    <Compile Include="CommandPattern\Commands\Stereo\StereoSetRadio.cs" />
+    <Compile Include="CommandPattern\Commands\Stereo\StereoSetDVD.cs" />
+    <Compile Include="CommandPattern\Commands\Stereo\StereoSetVolume.cs" />
+    <Compile Include="CommandPattern\Commands\Stereo\StereoSetCD.cs" />
+    <Compile Include="CommandPattern\Commands\Stereo\StereoOff.cs" />
+    <Compile Include="CommandPattern\Commands\Stereo\StereoOn.cs" />
+    <Compile Include="CommandPattern\Interfaces\Command.cs" />
+    <Compile Include="CommandPattern\SimpleRemoteControl.cs" />
     <Compile Include="Decorator\Beverage.cs" />
     <Compile Include="Decorator\ConcreteBeverages\DarkRoast.cs" />
     <Compile Include="Decorator\ConcreteBeverages\Decaf.cs" />

@@ -2,6 +2,13 @@
 using DesignPatterns.FactoryPattern;
 using DesignPatterns.FactoryPattern.Classes.PizzaStores;
 using DesignPatterns.Singleton;
+using DesignPatterns.CommandPattern;
+using DesignPatterns.CommandPattern.Commands;
+using DesignPatterns.CommandPattern.Commands.Light;
+using DesignPatterns.CommandPattern.Commands.CeilingFan;
+using DesignPatterns.CommandPattern.Commands.GarageDoor;
+using DesignPatterns.CommandPattern.Commands.Stereo;
+using DesignPatterns.CommandPattern.Devices;
 
 
 namespace DesignPatterns
@@ -170,23 +177,97 @@ namespace DesignPatterns
             ////Ensure a class only has one instance and provide a global point of access to it
 
 
-            Singleton.Singleton singleton = Singleton.Singleton.getInstance();
+            //Singleton.Singleton singleton = Singleton.Singleton.getInstance();
            
-            System.Threading.Thread newThread = new System.Threading.Thread(new System.Threading.ThreadStart(NewInstance));
-            newThread.Start();
+            //System.Threading.Thread newThread = new System.Threading.Thread(new System.Threading.ThreadStart(NewInstance));
+            //newThread.Start();
 
-            void NewInstance()
-            {
-                Singleton.Singleton singleton2 = Singleton.Singleton.getInstance();               
-            }
+            //void NewInstance()
+            //{
+            //    Singleton.Singleton singleton2 = Singleton.Singleton.getInstance();               
+            //}
 
+
+
+            //Console.ReadLine();
+
+
+
+            #endregion
+
+
+            SimpleRemoteControl simpleRemoteControl = new SimpleRemoteControl();
+
+            //LightDev livingRoomLight = new LightDev("Living Room light");
+            //LightDev kitchenLight = new LightDev("Kitchen light");
+            CeilingFanDev ceilingFan = new CeilingFanDev("Living Room");
+            //GarageDoorDev garageDoor = new GarageDoorDev();
+            //StereoDev stereo = new StereoDev("Living Room");
+
+            //LightOn livingRoomLightOn = new LightOn(livingRoomLight);
+            //LightOff livingRoomLightOff = new LightOff(livingRoomLight);
+            //LightOn kitchenLightOn = new LightOn(kitchenLight);
+            //LightOff kitchenLightOff = new LightOff(kitchenLight);
+
+            //CeilingFanOn ceilingFanOn = new CeilingFanOn(ceilingFan);
+            //CeilingFanOff ceilingFanOff = new CeilingFanOff(ceilingFan);
+
+            //GarageDoorUp garageDoorUp = new GarageDoorUp(garageDoor);
+            //GarageDoorDown garageDoorDown = new GarageDoorDown(garageDoor);
+
+            //StereoOn stereoOn = new StereoOn(stereo);
+            //StereoOff stereoOff = new StereoOff(stereo);
+
+            //simpleRemoteControl.setCommand(0, livingRoomLightOn, livingRoomLightOff);
+            //simpleRemoteControl.setCommand(1, kitchenLightOn, kitchenLightOff);
+            //simpleRemoteControl.setCommand(2, ceilingFanOn, ceilingFanOff);
+            //simpleRemoteControl.setCommand(3, garageDoorUp, garageDoorDown);
+            //simpleRemoteControl.setCommand(4, stereoOn, stereoOff);                 
+
+            //simpleRemoteControl.slotsBrief();
+
+            //simpleRemoteControl.onButtonWasPressed(0);
+            //simpleRemoteControl.offButtonWasPressed(0);
+            //simpleRemoteControl.undoButtonWasPressed();
+            //simpleRemoteControl.onButtonWasPressed(1);
+            //simpleRemoteControl.offButtonWasPressed(1);
+            //simpleRemoteControl.undoButtonWasPressed();
+            //simpleRemoteControl.onButtonWasPressed(2);
+            //simpleRemoteControl.offButtonWasPressed(2);
+            //simpleRemoteControl.undoButtonWasPressed();
+            //simpleRemoteControl.onButtonWasPressed(3);
+            //simpleRemoteControl.offButtonWasPressed(3);
+            //simpleRemoteControl.undoButtonWasPressed();
+            //simpleRemoteControl.onButtonWasPressed(4);
+            //simpleRemoteControl.offButtonWasPressed(4);
+            //simpleRemoteControl.undoButtonWasPressed();
+
+
+            CeilingFanMedium ceilingFanMedium= new CeilingFanMedium(ceilingFan);
+            CeilingFanHigh ceilingFanHigh = new CeilingFanHigh(ceilingFan);
+            CeilingFanLow CeilingFanLow = new CeilingFanLow(ceilingFan);
+            CeilingFanOff ceilingFanOff = new CeilingFanOff(ceilingFan);
+
+            simpleRemoteControl.setCommand(0, ceilingFanMedium, ceilingFanOff);
+            simpleRemoteControl.setCommand(1, ceilingFanHigh, ceilingFanOff);
+            simpleRemoteControl.setCommand(2, CeilingFanLow, ceilingFanOff);
+
+            simpleRemoteControl.onButtonWasPressed(0);
+            simpleRemoteControl.offButtonWasPressed(0);
+            simpleRemoteControl.undoButtonWasPressed();
+            simpleRemoteControl.onButtonWasPressed(1);
+            simpleRemoteControl.undoButtonWasPressed();
+            simpleRemoteControl.onButtonWasPressed(2);
+            simpleRemoteControl.undoButtonWasPressed();
+            simpleRemoteControl.onButtonWasPressed(2);
+            simpleRemoteControl.onButtonWasPressed(1);
+            simpleRemoteControl.undoButtonWasPressed();
+            simpleRemoteControl.offButtonWasPressed(0);
 
 
             Console.ReadLine();
 
-            
 
-        #endregion
 
     }
         
