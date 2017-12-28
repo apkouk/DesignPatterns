@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Comment CommentText="This is the object responsible to notify all the observers.&#xD;&#xA;&#xD;&#xA;">
+    <Position X="11.021" Y="2.146" Height="0.875" Width="1.96" />
+  </Comment>
+  <Comment CommentText="I have encapsulated the measurements in an object. It's used by the subject concrete object">
+    <Position X="5.719" Y="2.271" Height="0.75" Width="1.929" />
+  </Comment>
+  <Class Name="DesignPatterns.ObserverPattern.Classes.CurrentConditionsDisplay" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="3.25" Width="4.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAAAAAAAAAACAAAEAAAAAAADAAQAEAAA=</HashCode>
+      <FileName>ObserverPattern\Classes\CurrentConditionsDisplay.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="DesignPatterns.ObserverPattern.Classes.StatisticsDisplay" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="6.25" Width="4.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAAAAAAAAAACAAAEAAAAAAADAAQAEAAA=</HashCode>
+      <FileName>ObserverPattern\Classes\StatisticsDisplay.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="DesignPatterns.ObserverPattern.Classes.WeatherData" BaseTypeListCollapsed="true">
+    <Position X="10" Y="3.25" Width="3.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACBAAIAEAAAAAAAAEAQEAAAAAAADACQAAAAA=</HashCode>
+      <FileName>ObserverPattern\Classes\WeatherData.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="DesignPatterns.ObserverPattern.Classes.WeatherDataMeasurement" BaseTypeListCollapsed="true">
+    <Position X="5.5" Y="3.25" Width="4" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAADAAQAAAADAAQAAAAAABAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ObserverPattern\Classes\WeatherDataMeasurement.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Interface Name="DesignPatterns.ObserverPattern.Interfaces.IDisplayElement">
+    <Position X="0.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ObserverPattern\Interfaces\IDisplayElement.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="DesignPatterns.ObserverPatternExc.Interfaces.IObserver">
+    <Position X="0.5" Y="1.75" Width="4.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAA=</HashCode>
+      <FileName>ObserverPatternExc\Interfaces\IObserver.cs</FileName>
+      <NewMemberFileName>ObserverPattern\Interfaces\IObserver.cs</NewMemberFileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="DesignPatterns.ObserverPatternExc.Interfaces.ISubject">
+    <Position X="10.5" Y="0.5" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAAIAAAAAAAAAAAAAAAAAAAAAAACAAAAAA=</HashCode>
+      <FileName>ObserverPatternExc\Interfaces\ISubject.cs</FileName>
+      <NewMemberFileName>ObserverPattern\Interfaces\ISubject.cs</NewMemberFileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="DesignPatterns.ObserverPattern.Interfaces.IWeatherDataMeasurement">
+    <Position X="5.5" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAADAAQAAAAAAAAAAAAAABAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ObserverPattern\Interfaces\IWeatherDataMeasurement.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
