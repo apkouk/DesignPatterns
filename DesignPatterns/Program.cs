@@ -17,19 +17,17 @@ namespace DesignPatterns
     {
         private static void Main(string[] args)
         {
-            #region Strategy Pattern
-
             ////--------------------------------------
             ////    The Strategy Pattern
             ////--------------------------------------
             ////Defines a family of algorithms, encapsulates each one, and makes them interchangable.
             ////Stratey lets the algorithim vary independently from clients that use it.
-
+            ////======================================
             ////Encapsulates what varies
             ////Favor composition over inheritance
             ////Program to interface, not implementations
 
-
+            #region Strategy
 
             //Duck duck = new MallardDuck();
             //duck.display();
@@ -49,14 +47,16 @@ namespace DesignPatterns
 
             #endregion
 
-            #region Observer Pattern
 
             ////--------------------------------------
             ////    The Observer Pattern
             ////--------------------------------------
             ////The observer pattern is a software design pattern in which an object, called the subject, maintains a list of its dependents, 
             ////called observers, and notifies them automatically of any state changes, usually by calling one of their methods.
+            ////======================================
+            ////Strive for loosely coupled designs between objects that interact
 
+            #region Observer
 
             //WeatherData weatherData = new WeatherData();
 
@@ -110,13 +110,16 @@ namespace DesignPatterns
 
             #endregion
 
-            #region Decorator Pattern
 
             ////--------------------------------------
             ////    The Decorator Pattern
             ////--------------------------------------
             ////Attach additional responsibilities to an object dynamically.
             ////Decorators provide a flexible alternative to subclassing for extended funtionality.
+            ////======================================
+            ////Classes shoud be open for extension but closed for modification (Open-Closed principle)
+
+            #region Decorator
 
             //EXC Improve size decotaro to send and enum with the size, do the same wiht offers
 
@@ -145,7 +148,6 @@ namespace DesignPatterns
 
             #endregion
 
-            #region Abstract Factory Pattern
 
             ////--------------------------------------
             ////    The Factory Pattern
@@ -153,6 +155,10 @@ namespace DesignPatterns
             ////Abstract Factory implemented (not the factory method)
             ////provides an interface for creating families of related or dependent objects
             ////without specifying their concrete classes. 
+            ////======================================
+            ////Depend on abstractions. Do not depend on concrete classes
+
+            #region Abstract Factory
 
             //PizzaStore pizzaStore = new NyPizzaStore();
             //pizzaStore.OrderPizza("cheese");
@@ -169,16 +175,16 @@ namespace DesignPatterns
 
             #endregion
 
-            #region Singleton
 
             ////--------------------------------------
             ////    The Singleton Pattern
             ////--------------------------------------
             ////Ensure a class only has one instance and provide a global point of access to it
 
+            #region Singleton
 
             //Singleton.Singleton singleton = Singleton.Singleton.getInstance();
-           
+
             //System.Threading.Thread newThread = new System.Threading.Thread(new System.Threading.ThreadStart(NewInstance));
             //newThread.Start();
 
@@ -195,6 +201,14 @@ namespace DesignPatterns
 
             #endregion
 
+
+            ////--------------------------------------
+            ////    The Command Pattern
+            ////--------------------------------------
+            ////Encapsulates a request as an object, thereby letting you parametrize clients with different
+            ////requests, queue or log requests, and supoort undoable operations.
+            
+            #region Command 
 
             SimpleRemoteControl simpleRemoteControl = new SimpleRemoteControl();
 
@@ -300,7 +314,7 @@ namespace DesignPatterns
 
             Console.ReadLine();
 
-
+            #endregion
         }
     }   
 }
