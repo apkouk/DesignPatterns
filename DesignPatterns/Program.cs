@@ -286,7 +286,7 @@ namespace DesignPatterns
             //Console.ReadLine();
 
 
-            ///////////////////////FORTH TEST///////////////////////
+            ///////////////////////FOURTH TEST///////////////////////
 
             LightDev kitchenLight = new LightDev("Kitchen light");
             CeilingFanDev ceilingFan = new CeilingFanDev("Living Room");
