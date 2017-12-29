@@ -10,7 +10,7 @@ namespace DesignPatterns.ObserverPatternExc.Classes
     public class DataObservers : ISubject
     {
         private List<IObserver> observersList = new List<IObserver>();
-        private ISubject subject;
+        //private ISubject subject;
              
 
         public void notifyObservers()

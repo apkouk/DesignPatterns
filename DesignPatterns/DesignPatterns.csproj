@@ -73,6 +73,7 @@
     <Compile Include="CommandPattern\Commands\Stereo\StereoOff.cs" />
     <Compile Include="CommandPattern\Commands\Stereo\StereoOn.cs" />
     <Compile Include="CommandPattern\Interfaces\Command.cs" />
+    <Compile Include="CommandPattern\MacroCommand.cs" />
     <Compile Include="CommandPattern\SimpleRemoteControl.cs" />
     <Compile Include="Decorator\Beverage.cs" />
     <Compile Include="Decorator\ConcreteBeverages\DarkRoast.cs" />

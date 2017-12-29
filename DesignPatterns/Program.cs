@@ -9,7 +9,7 @@ using DesignPatterns.CommandPattern.Commands.CeilingFan;
 using DesignPatterns.CommandPattern.Commands.GarageDoor;
 using DesignPatterns.CommandPattern.Commands.Stereo;
 using DesignPatterns.CommandPattern.Devices;
-
+using DesignPatterns.CommandPattern.Interfaces;
 
 namespace DesignPatterns
 {
@@ -198,9 +198,11 @@ namespace DesignPatterns
 
             SimpleRemoteControl simpleRemoteControl = new SimpleRemoteControl();
 
+            ///////////////////////FIRST TEST///////////////////////
+
             //LightDev livingRoomLight = new LightDev("Living Room light");
             //LightDev kitchenLight = new LightDev("Kitchen light");
-            CeilingFanDev ceilingFan = new CeilingFanDev("Living Room");
+            //CeilingFanDev ceilingFan = new CeilingFanDev("Living Room");
             //GarageDoorDev garageDoor = new GarageDoorDev();
             //StereoDev stereo = new StereoDev("Living Room");
 
@@ -241,38 +243,64 @@ namespace DesignPatterns
             //simpleRemoteControl.onButtonWasPressed(4);
             //simpleRemoteControl.offButtonWasPressed(4);
             //simpleRemoteControl.undoButtonWasPressed();
+            //Console.ReadLine();
+
+            ///////////////////////SECOND TEST///////////////////////
+
+            //CeilingFanDev ceilingFan = new CeilingFanDev("Living Room");
+            //CeilingFanMedium ceilingFanMedium= new CeilingFanMedium(ceilingFan);
+            //CeilingFanHigh ceilingFanHigh = new CeilingFanHigh(ceilingFan);
+            //CeilingFanLow CeilingFanLow = new CeilingFanLow(ceilingFan);
+            //CeilingFanOff ceilingFanOff = new CeilingFanOff(ceilingFan);
+
+            //simpleRemoteControl.setCommand(0, ceilingFanMedium, ceilingFanOff);
+            //simpleRemoteControl.setCommand(1, ceilingFanHigh, ceilingFanOff);
+            //simpleRemoteControl.setCommand(2, CeilingFanLow, ceilingFanOff);
+
+            //simpleRemoteControl.onButtonWasPressed(0);
+            //simpleRemoteControl.offButtonWasPressed(0);
+            //simpleRemoteControl.undoButtonWasPressed();
+            //simpleRemoteControl.onButtonWasPressed(1);
+            //simpleRemoteControl.undoButtonWasPressed();
+            //simpleRemoteControl.onButtonWasPressed(2);
+            //simpleRemoteControl.undoButtonWasPressed();
+            //simpleRemoteControl.onButtonWasPressed(2);
+            //simpleRemoteControl.onButtonWasPressed(1);
+            //simpleRemoteControl.undoButtonWasPressed();
+            //simpleRemoteControl.offButtonWasPressed(0);
+            
+            //Console.ReadLine();
 
 
-            CeilingFanMedium ceilingFanMedium= new CeilingFanMedium(ceilingFan);
-            CeilingFanHigh ceilingFanHigh = new CeilingFanHigh(ceilingFan);
-            CeilingFanLow CeilingFanLow = new CeilingFanLow(ceilingFan);
+            ///////////////////////FORTH TEST///////////////////////
+
+            LightDev kitchenLight = new LightDev("Kitchen light");
+            CeilingFanDev ceilingFan = new CeilingFanDev("Living Room");
+            GarageDoorDev garageDoor = new GarageDoorDev();
+            StereoDev stereo = new StereoDev("Living Room");
+
+            LightOn kitchenLightOn = new LightOn(kitchenLight);
+            LightOff kitchenLightOff = new LightOff(kitchenLight);
+            CeilingFanOn ceilingFanOn = new CeilingFanOn(ceilingFan);
             CeilingFanOff ceilingFanOff = new CeilingFanOff(ceilingFan);
+            GarageDoorUp garageDoorUp = new GarageDoorUp(garageDoor);
+            GarageDoorDown garageDoorDown = new GarageDoorDown(garageDoor);
+            StereoOn stereoOn = new StereoOn(stereo);
+            StereoOff stereoOff = new StereoOff(stereo);
 
-            simpleRemoteControl.setCommand(0, ceilingFanMedium, ceilingFanOff);
-            simpleRemoteControl.setCommand(1, ceilingFanHigh, ceilingFanOff);
-            simpleRemoteControl.setCommand(2, CeilingFanLow, ceilingFanOff);
+            Command[] commandsOn = { kitchenLightOn, ceilingFanOn, garageDoorUp, stereoOn };
+            Command[] commandsOff = { kitchenLightOff, ceilingFanOff, garageDoorDown, stereoOff };
+            MacroCommand macroCommandOn = new MacroCommand(commandsOn);
+            MacroCommand macroCommandOff = new MacroCommand(commandsOff);
 
+            simpleRemoteControl.setCommand(0, macroCommandOn, macroCommandOff);
             simpleRemoteControl.onButtonWasPressed(0);
-            simpleRemoteControl.offButtonWasPressed(0);
+            Console.WriteLine("UNDO");
             simpleRemoteControl.undoButtonWasPressed();
-            simpleRemoteControl.onButtonWasPressed(1);
-            simpleRemoteControl.undoButtonWasPressed();
-            simpleRemoteControl.onButtonWasPressed(2);
-            simpleRemoteControl.undoButtonWasPressed();
-            simpleRemoteControl.onButtonWasPressed(2);
-            simpleRemoteControl.onButtonWasPressed(1);
-            simpleRemoteControl.undoButtonWasPressed();
-            simpleRemoteControl.offButtonWasPressed(0);
-
 
             Console.ReadLine();
 
 
-
-    }
-        
-
-
-    }
-   
+        }
+    }   
 }
