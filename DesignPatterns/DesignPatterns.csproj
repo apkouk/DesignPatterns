@@ -47,6 +47,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ObjectAdapter\Adapters\TurkeyAdapter.cs" />
+    <Compile Include="ObjectAdapter\Classes\MallardDuck.cs" />
+    <Compile Include="ObjectAdapter\Classes\WildTurkey.cs" />
+    <Compile Include="ObjectAdapter\Interfaces\Duck.cs" />
+    <Compile Include="ObjectAdapter\Interfaces\Turkey.cs" />
     <Compile Include="CommandPattern\Commands\CeilingFan\CeilingFanOn.cs" />
     <Compile Include="CommandPattern\Commands\CeilingFan\CeilingFanOff.cs" />
     <Compile Include="CommandPattern\Commands\CeilingFan\CeilingFanState.cs" />

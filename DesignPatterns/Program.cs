@@ -10,6 +10,9 @@ using DesignPatterns.CommandPattern.Commands.GarageDoor;
 using DesignPatterns.CommandPattern.Commands.Stereo;
 using DesignPatterns.CommandPattern.Devices;
 using DesignPatterns.CommandPattern.Interfaces;
+using DesignPatterns.ObjectAdapter.Interfaces;
+using DesignPatterns.ObjectAdapter.Classes;
+using DesignPatterns.ObjectAdapter.Adapters;
 
 namespace DesignPatterns
 {
@@ -210,7 +213,7 @@ namespace DesignPatterns
             
             #region Command 
 
-            SimpleRemoteControl simpleRemoteControl = new SimpleRemoteControl();
+            //SimpleRemoteControl simpleRemoteControl = new SimpleRemoteControl();
 
             ///////////////////////FIRST TEST///////////////////////
 
@@ -290,31 +293,60 @@ namespace DesignPatterns
 
             LightDev kitchenLight = new LightDev("Kitchen light");
             CeilingFanDev ceilingFan = new CeilingFanDev("Living Room");
-            GarageDoorDev garageDoor = new GarageDoorDev();
-            StereoDev stereo = new StereoDev("Living Room");
+            //GarageDoorDev garageDoor = new GarageDoorDev();
+            //StereoDev stereo = new StereoDev("Living Room");
 
-            LightOn kitchenLightOn = new LightOn(kitchenLight);
-            LightOff kitchenLightOff = new LightOff(kitchenLight);
-            CeilingFanOn ceilingFanOn = new CeilingFanOn(ceilingFan);
-            CeilingFanOff ceilingFanOff = new CeilingFanOff(ceilingFan);
-            GarageDoorUp garageDoorUp = new GarageDoorUp(garageDoor);
-            GarageDoorDown garageDoorDown = new GarageDoorDown(garageDoor);
-            StereoOn stereoOn = new StereoOn(stereo);
-            StereoOff stereoOff = new StereoOff(stereo);
+            //LightOn kitchenLightOn = new LightOn(kitchenLight);
+            //LightOff kitchenLightOff = new LightOff(kitchenLight);
+            //CeilingFanOn ceilingFanOn = new CeilingFanOn(ceilingFan);
+            //CeilingFanOff ceilingFanOff = new CeilingFanOff(ceilingFan);
+            //GarageDoorUp garageDoorUp = new GarageDoorUp(garageDoor);
+            //GarageDoorDown garageDoorDown = new GarageDoorDown(garageDoor);
+            //StereoOn stereoOn = new StereoOn(stereo);
+            //StereoOff stereoOff = new StereoOff(stereo);
 
-            Command[] commandsOn = { kitchenLightOn, ceilingFanOn, garageDoorUp, stereoOn };
-            Command[] commandsOff = { kitchenLightOff, ceilingFanOff, garageDoorDown, stereoOff };
-            MacroCommand macroCommandOn = new MacroCommand(commandsOn);
-            MacroCommand macroCommandOff = new MacroCommand(commandsOff);
+            //Command[] commandsOn = { kitchenLightOn, ceilingFanOn, garageDoorUp, stereoOn };
+            //Command[] commandsOff = { kitchenLightOff, ceilingFanOff, garageDoorDown, stereoOff };
+            //MacroCommand macroCommandOn = new MacroCommand(commandsOn);
+            //MacroCommand macroCommandOff = new MacroCommand(commandsOff);
 
-            simpleRemoteControl.setCommand(0, macroCommandOn, macroCommandOff);
-            simpleRemoteControl.onButtonWasPressed(0);
-            Console.WriteLine("UNDO");
-            simpleRemoteControl.undoButtonWasPressed();
+            //simpleRemoteControl.setCommand(0, macroCommandOn, macroCommandOff);
+            //simpleRemoteControl.onButtonWasPressed(0);
+            //Console.WriteLine("UNDO");
+            //simpleRemoteControl.undoButtonWasPressed();
+
+            //Console.ReadLine();
+
+            #endregion
+
+
+            ////--------------------------------------
+            ////    The Adapter Pattern
+            ////--------------------------------------
+            ////Converts the interface of a class into another interface the client expects.
+            ////Adapter lets classes work together that couldn't otherwise because of compatible interfaces.
+
+
+            MallardDuck mallardDuck = new MallardDuck();
+            WildTurkey wildTurkey = new WildTurkey();
+
+            Duck turkeyAdapter = new TurkeyAdapter(wildTurkey);
+
+            Console.WriteLine("The Mallard Duck says...");
+            mallardDuck.fly();
+            mallardDuck.quack();
+
+            Console.WriteLine("The Wild Turkeys says...");
+            wildTurkey.fly();
+            wildTurkey.gobble();
+
+            Console.WriteLine("The Turkey Adapter says...");
+            turkeyAdapter.fly();
+            turkeyAdapter.quack();
 
             Console.ReadLine();
 
-            #endregion
+
         }
     }   
 }
