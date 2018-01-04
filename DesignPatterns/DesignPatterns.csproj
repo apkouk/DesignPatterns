@@ -47,6 +47,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Facade\Devices\Amplifier.cs" />
+    <Compile Include="Facade\Devices\CdPlayer.cs" />
+    <Compile Include="Facade\Devices\DvdPlayer.cs" />
+    <Compile Include="Facade\Devices\PopcornPopper.cs" />
+    <Compile Include="Facade\Devices\Projector.cs" />
+    <Compile Include="Facade\Devices\Screen.cs" />
+    <Compile Include="Facade\Devices\TheatherLights.cs" />
+    <Compile Include="Facade\Devices\Tuner.cs" />
+    <Compile Include="Facade\HomeTheaterFacade.cs" />
     <Compile Include="ObjectAdapter\Adapters\TurkeyAdapter.cs" />
     <Compile Include="ObjectAdapter\Classes\MallardDuck.cs" />
     <Compile Include="ObjectAdapter\Classes\WildTurkey.cs" />

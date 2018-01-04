@@ -13,6 +13,8 @@ using DesignPatterns.CommandPattern.Interfaces;
 using DesignPatterns.ObjectAdapter.Interfaces;
 using DesignPatterns.ObjectAdapter.Classes;
 using DesignPatterns.ObjectAdapter.Adapters;
+using DesignPatterns.Facade;
+using DesignPatterns.Facade.Devices;
 
 namespace DesignPatterns
 {
@@ -210,7 +212,7 @@ namespace DesignPatterns
             ////--------------------------------------
             ////Encapsulates a request as an object, thereby letting you parametrize clients with different
             ////requests, queue or log requests, and supoort undoable operations.
-            
+
             #region Command 
 
             //SimpleRemoteControl simpleRemoteControl = new SimpleRemoteControl();
@@ -285,7 +287,7 @@ namespace DesignPatterns
             //simpleRemoteControl.onButtonWasPressed(1);
             //simpleRemoteControl.undoButtonWasPressed();
             //simpleRemoteControl.offButtonWasPressed(0);
-            
+
             //Console.ReadLine();
 
 
@@ -326,27 +328,81 @@ namespace DesignPatterns
             ////Converts the interface of a class into another interface the client expects.
             ////Adapter lets classes work together that couldn't otherwise because of compatible interfaces.
 
+            #region Adapter
+            //MallardDuck mallardDuck = new MallardDuck();
+            //WildTurkey wildTurkey = new WildTurkey();
 
-            MallardDuck mallardDuck = new MallardDuck();
-            WildTurkey wildTurkey = new WildTurkey();
+            //Duck turkeyAdapter = new TurkeyAdapter(wildTurkey);
 
-            Duck turkeyAdapter = new TurkeyAdapter(wildTurkey);
+            //Console.WriteLine("The Mallard Duck says...");
+            //mallardDuck.fly();
+            //mallardDuck.quack();
 
-            Console.WriteLine("The Mallard Duck says...");
-            mallardDuck.fly();
-            mallardDuck.quack();
+            //Console.WriteLine("The Wild Turkeys says...");
+            //wildTurkey.fly();
+            //wildTurkey.gobble();
 
-            Console.WriteLine("The Wild Turkeys says...");
-            wildTurkey.fly();
-            wildTurkey.gobble();
+            //Console.WriteLine("The Turkey Adapter says...");
+            //turkeyAdapter.fly();
+            //turkeyAdapter.quack();
 
-            Console.WriteLine("The Turkey Adapter says...");
-            turkeyAdapter.fly();
-            turkeyAdapter.quack();
+            //Console.ReadLine();
+
+            #endregion
+
+
+            ////--------------------------------------
+            ////    The Facade Pattern
+            ////--------------------------------------
+            ////Provides a unified interface to a set of interfaces in a subsystem.
+            ////Facade defines a higher-level interface that makes the subsystem easier to use.
+            ////======================================
+            ////Principle of Least Knowledge: talk only to your immediate friends
+
+            //public class Car
+            //{
+            //    //Here's a component of this class. We can call its methods
+            //    Engine engine;
+
+            //    public Car()
+            //    { }
+
+            //    public void Start(Key key)
+            //    {
+            //        //Here we are creating a new object; its methods are legal
+            //        Doors doors = new Doors();
+            //        //You can call a method on a object passed as a parameter
+            //        bool authorized = key.turns();
+
+            //        if(authorized)
+            //        {
+            //            //You can call a method on a component of the object
+            //            engine.start();
+            //            //You can call a local method within the object
+            //            updateDashboardDisplay();
+            //            //You can call a method on an object you create or instantiate
+            //            doors.lock();
+            //        }
+
+            //    }
+            //}
+
+            Amplifier amplifier = new Amplifier();
+            CdPlayer cdPlayer = new CdPlayer();
+            DvdPlayer dvdPlayer = new DvdPlayer();
+            PopcornPopper popcornPopper = new PopcornPopper();
+            Projector projector = new Projector();
+            Screen screen = new Screen();
+            TheatherLights theatherLights = new TheatherLights();
+            Tuner tuner = new Tuner();
+
+            HomeTheaterFacade homeTheaterFacade = new HomeTheaterFacade(amplifier, cdPlayer, dvdPlayer, popcornPopper, projector, screen, theatherLights, tuner);
+            homeTheaterFacade.watchMovie("The Godfather");
+            homeTheaterFacade.endMovie();
 
             Console.ReadLine();
 
 
         }
-    }   
+    }
 }
