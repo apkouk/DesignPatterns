@@ -18,7 +18,7 @@ namespace DesignPatterns.Template.NoHook
                 addCondiments();
         }
 
-        //The common mewthods for the subclasses are implmented in the high class (this one rules the show)
+        //The common methods for the subclasses are implemented in the high class (this one rules the show)
         private void boilWater()
         {
             Console.WriteLine("Boling water");
@@ -28,12 +28,12 @@ namespace DesignPatterns.Template.NoHook
             Console.WriteLine("Pouring beverage in cup");
         }
 
-        //As the sublcasses will have to implement this methods will marked them as abstract
+        //As the subclasses will have to implement this methods will marked them as abstract
         internal abstract void brew();
         internal abstract void addCondiments();
 
 
-        //This is the hook. A hook is a method in the abstract class that gives sibclasses the ability
+        //This is the hook. A hook is a method in the abstract class that gives subclasses the ability
         //to "hook into" the algorithim if the wish. It might given empty or with a default implementation.
         public virtual bool CustomerWantsCondiment()
         {
