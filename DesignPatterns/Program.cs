@@ -15,6 +15,7 @@ using DesignPatterns.ObjectAdapter.Classes;
 using DesignPatterns.ObjectAdapter.Adapters;
 using DesignPatterns.Facade;
 using DesignPatterns.Facade.Devices;
+using DesignPatterns.Template.NoHook;
 
 namespace DesignPatterns
 {
@@ -359,6 +360,9 @@ namespace DesignPatterns
             ////======================================
             ////Principle of Least Knowledge: talk only to your immediate friends
 
+            #region Facade
+
+
             //public class Car
             //{
             //    //Here's a component of this class. We can call its methods
@@ -387,18 +391,44 @@ namespace DesignPatterns
             //    }
             //}
 
-            Amplifier amplifier = new Amplifier();
-            CdPlayer cdPlayer = new CdPlayer();
-            DvdPlayer dvdPlayer = new DvdPlayer();
-            PopcornPopper popcornPopper = new PopcornPopper();
-            Projector projector = new Projector();
-            Screen screen = new Screen();
-            TheatherLights theatherLights = new TheatherLights();
-            Tuner tuner = new Tuner();
+            //Amplifier amplifier = new Amplifier();
+            //CdPlayer cdPlayer = new CdPlayer();
+            //DvdPlayer dvdPlayer = new DvdPlayer();
+            //PopcornPopper popcornPopper = new PopcornPopper();
+            //Projector projector = new Projector();
+            //Screen screen = new Screen();
+            //TheatherLights theatherLights = new TheatherLights();
+            //Tuner tuner = new Tuner();
 
-            HomeTheaterFacade homeTheaterFacade = new HomeTheaterFacade(amplifier, cdPlayer, dvdPlayer, popcornPopper, projector, screen, theatherLights, tuner);
-            homeTheaterFacade.watchMovie("The Godfather");
-            homeTheaterFacade.endMovie();
+            //HomeTheaterFacade homeTheaterFacade = new HomeTheaterFacade(amplifier, cdPlayer, dvdPlayer, popcornPopper, projector, screen, theatherLights, tuner);
+            //homeTheaterFacade.watchMovie("The Godfather");
+            //homeTheaterFacade.endMovie();
+
+            //Console.ReadLine();
+
+            #endregion
+
+
+            ////--------------------------------------
+            ////    The Template Pattern
+            ////--------------------------------------
+            ////Defines the skeleton of an algorithm in a method, deferring some steps to subclasses.
+            ////Template method lest subclasses redefine certain steps of an algorithm without changing 
+            ////the algorithm's structure.
+            ////======================================
+            ////Don't call us, we'll call you (superclasses are running the show, let them call your subclasses
+            ////when they are nedded
+
+            //NoHook
+            //Coffee coffee = new Coffee();
+            //coffee.prepareRecipe();
+
+            //Tea tea = new Tea();
+            //tea.prepareRecipe();
+
+            //With hooh
+            CoffeeHook coffee = new CoffeeHook();
+            coffee.prepareRecipe();
 
             Console.ReadLine();
 

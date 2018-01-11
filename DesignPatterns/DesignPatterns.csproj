@@ -170,9 +170,19 @@
     <Compile Include="StrategyPattern\Classes\Duck.cs" />
     <Compile Include="StrategyPattern\Interfaces\FlyBehavior.cs" />
     <Compile Include="StrategyPattern\Interfaces\QuakBehavior.cs" />
+    <Compile Include="Template\NoHook\CaffeineBeverage.cs" />
+    <Compile Include="Template\NoHook\Coffee.cs" />
+    <Compile Include="Template\NoHook\Tea.cs" />
+    <Compile Include="Template\WithHook\CaffeineBeverageHook.cs" />
+    <Compile Include="Template\WithHook\CoffeeHook.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="ClassDiagram1.cd" />
+    <None Include="ClassDiagram2.cd" />
+    <None Include="ClassDiagram3.cd" />
+    <None Include="ClassDiagram4.cd" />
+    <None Include="ClassDiagram5.cd" />
     <None Include="FactoryPattern\AbstractFactoryPattern.cd" />
     <None Include="Decorator\DecoratorPatternDiagram.cd" />
     <None Include="ObserverPattern\ObserverPatternDiagram.cd" />
