@@ -15,7 +15,10 @@ using DesignPatterns.ObjectAdapter.Classes;
 using DesignPatterns.ObjectAdapter.Adapters;
 using DesignPatterns.Facade;
 using DesignPatterns.Facade.Devices;
+using DesignPatterns.Iterator;
 using DesignPatterns.Template.NoHook;
+using DesignPatterns.Iterator.Menus;
+using DesignPatterns.Iterator.Interface;
 
 namespace DesignPatterns
 {
@@ -419,6 +422,8 @@ namespace DesignPatterns
             ////Don't call us, we'll call you (superclasses are running the show, let them call your subclasses
             ////when they are nedded
 
+            #region Template
+
             //NoHook
             //Coffee coffee = new Coffee();
             //coffee.prepareRecipe();
@@ -427,11 +432,31 @@ namespace DesignPatterns
             //tea.prepareRecipe();
 
             //With hooh
-            CoffeeHook coffee = new CoffeeHook();
-            coffee.prepareRecipe();
+            //CoffeeHook coffee = new CoffeeHook();
+            //coffee.prepareRecipe();
+
+            //Console.ReadLine();
+
+            #endregion
+
+
+            ////--------------------------------------
+            ////    The Iterator Pattern
+            ////--------------------------------------
+            ////Provides a way to access the element of an aggregate object sequentially 
+            ////without exposing its underlying representation            
+            ////======================================
+            ////A class should have only one reason to change
+            
+
+            Menu pancakeHouseMenu = new PancakeHouseMenu();
+            Menu dinerMenu = new DinerMenu();
+            Menu cafeMenu = new CafeMenu();
+
+            Waitress waitress = new Waitress(pancakeHouseMenu, dinerMenu, cafeMenu);
+            waitress.printMenu();
 
             Console.ReadLine();
-
 
         }
     }

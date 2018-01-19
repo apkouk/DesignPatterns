@@ -56,6 +56,16 @@
     <Compile Include="Facade\Devices\TheatherLights.cs" />
     <Compile Include="Facade\Devices\Tuner.cs" />
     <Compile Include="Facade\HomeTheaterFacade.cs" />
+    <Compile Include="Iterator\Interface\Menu.cs" />
+    <Compile Include="Iterator\Iterators\CafeMenuIterator.cs" />
+    <Compile Include="Iterator\Menus\CafeMenu.cs" />
+    <Compile Include="Iterator\Menus\DinerMenu.cs" />
+    <Compile Include="Iterator\Iterators\DinerMenuIterator.cs" />
+    <Compile Include="Iterator\Interface\Iterator.cs" />
+    <Compile Include="Iterator\MenuItem.cs" />
+    <Compile Include="Iterator\Menus\PancakeHouseMenu.cs" />
+    <Compile Include="Iterator\Iterators\PancakeHouseMenuIterator.cs" />
+    <Compile Include="Iterator\Waitress.cs" />
     <Compile Include="ObjectAdapter\Adapters\TurkeyAdapter.cs" />
     <Compile Include="ObjectAdapter\Classes\MallardDuck.cs" />
     <Compile Include="ObjectAdapter\Classes\WildTurkey.cs" />
@@ -178,11 +188,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="ClassDiagram1.cd" />
-    <None Include="ClassDiagram2.cd" />
-    <None Include="ClassDiagram3.cd" />
-    <None Include="ClassDiagram4.cd" />
-    <None Include="ClassDiagram5.cd" />
     <None Include="FactoryPattern\AbstractFactoryPattern.cd" />
     <None Include="Decorator\DecoratorPatternDiagram.cd" />
     <None Include="ObserverPattern\ObserverPatternDiagram.cd" />
