@@ -8,7 +8,6 @@ using DesignPatterns.CommandPattern.Commands.Light;
 using DesignPatterns.CommandPattern.Commands.CeilingFan;
 using DesignPatterns.CommandPattern.Commands.GarageDoor;
 using DesignPatterns.CommandPattern.Commands.Stereo;
-using DesignPatterns.CommandPattern.Devices;
 using DesignPatterns.CommandPattern.Interfaces;
 using DesignPatterns.ObjectAdapter.Interfaces;
 using DesignPatterns.ObjectAdapter.Classes;
@@ -18,7 +17,8 @@ using DesignPatterns.Facade.Devices;
 using DesignPatterns.Iterator;
 using DesignPatterns.Template.NoHook;
 using DesignPatterns.Iterator.Menus;
-using DesignPatterns.Iterator.Interface;
+using DesignPatterns.Composite.Abstract;
+using DesignPatterns.Composite.Menus;
 
 namespace DesignPatterns
 {
@@ -297,8 +297,8 @@ namespace DesignPatterns
 
             ///////////////////////FOURTH TEST///////////////////////
 
-            LightDev kitchenLight = new LightDev("Kitchen light");
-            CeilingFanDev ceilingFan = new CeilingFanDev("Living Room");
+            //LightDev kitchenLight = new LightDev("Kitchen light");
+            //CeilingFanDev ceilingFan = new CeilingFanDev("Living Room");
             //GarageDoorDev garageDoor = new GarageDoorDev();
             //StereoDev stereo = new StereoDev("Living Room");
 
@@ -447,16 +447,48 @@ namespace DesignPatterns
             ////without exposing its underlying representation            
             ////======================================
             ////A class should have only one reason to change
-            
 
-            Menu pancakeHouseMenu = new PancakeHouseMenu();
-            Menu dinerMenu = new DinerMenu();
-            Menu cafeMenu = new CafeMenu();
+            #region Iterator
 
-            Waitress waitress = new Waitress(pancakeHouseMenu, dinerMenu, cafeMenu);
+            //Menu pancakeHouseMenu = new PancakeHouseMenu();
+            //Menu dinerMenu = new DinerMenu();
+            //Menu cafeMenu = new CafeMenu();
+
+            //Waitress waitress = new Waitress(pancakeHouseMenu, dinerMenu, cafeMenu);
+            //waitress.printMenu();
+
+            //Console.ReadLine();
+            #endregion
+
+
+            ////--------------------------------------
+            ////    The Composite Pattern
+            ////--------------------------------------
+            ////Compose objects into tree structures to represent a part-whole hierarchies.
+            ////Composite lets clients treat individual objects and compositions of objects uniformly
+            ////======================================
+            ////A class should have only one reason to change
+
+            #region Composite
+
+            MenuComponent pancakeHouseMenu = new Composite.Menus.PancakeHouseMenu();
+            MenuComponent dinerMenu = new Composite.Menus.DinerMenu();
+            MenuComponent cafeMenu = new Composite.Menus.CafeMenu();
+            MenuComponent dessertMenu = new Menu("DESSERT MENU", "Dessert of course!");
+
+            MenuComponent allMenus = new Menu("ALL MENUS", "All menus combined");
+            allMenus.Add(pancakeHouseMenu);
+            allMenus.Add(dinerMenu);
+            allMenus.Add(cafeMenu);
+
+            dinerMenu.Add(new Composite.MenuItem("Pasta", "Spaghetti with Marinara Sauce, and a slice of sourdough bread", true, 3.89));
+            //dinerMenu.Add(cafeMenu);
+
+            Composite.Waitress waitress = new Composite.Waitress(allMenus);
             waitress.printMenu();
 
             Console.ReadLine();
+            #endregion
 
         }
     }

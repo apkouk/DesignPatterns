@@ -47,6 +47,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Composite\Abstract\MenuComponent.cs" />
+    <Compile Include="Composite\Interface\Iterator.cs" />
+    <Compile Include="Composite\Interface\Menu.cs" />
+    <Compile Include="Composite\Iterators\CafeMenuIterator.cs" />
+    <Compile Include="Composite\Iterators\DinerMenuIterator.cs" />
+    <Compile Include="Composite\Iterators\PancakeHouseMenuIterator.cs" />
+    <Compile Include="Composite\MenuItem.cs" />
+    <Compile Include="Composite\MenuPrinter.cs" />
+    <Compile Include="Composite\Menus\CafeMenu.cs" />
+    <Compile Include="Composite\Menus\DinerMenu.cs" />
+    <Compile Include="Composite\Menus\Menu.cs" />
+    <Compile Include="Composite\Menus\PancakeHouseMenu.cs" />
+    <Compile Include="Composite\Waitress.cs" />
     <Compile Include="Facade\Devices\Amplifier.cs" />
     <Compile Include="Facade\Devices\CdPlayer.cs" />
     <Compile Include="Facade\Devices\DvdPlayer.cs" />
